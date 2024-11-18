@@ -1,0 +1,147 @@
+Node
+------------
+node server- js runtime environment + js libraries
+
+features of node-extreamly faster
+                -asynchronous programming(oru code run cheyyinna tymile wait cheyyinne vaare code indenkil aah wait cheyyinna tymile aah code run cheyyippikum     , no wasting wating time)
+                -single threded (call stack le at a time one process)  
+                + event loop 
+                -highly scalable (node server can use in small and big server , its limitless)
+                -open source (free aayi use aakkan )
+
+
+node js global objects -- import export aakathe thanne inbuild aayi use akahn pattunna objects 
+                        -it can access anywhere from node js without exporting or importing
+                        eg: console.log()  setTimeOut()
+
+node js module system-each file in nodejs app is considerd as seperate module
+                     -to reuse  modules we have export and import
+                     -import - require() function
+                     -export - module.exports(used for collection)/exports  I(separate)   
+                     inbuild modules- fs(file system module) -handling file related event
+                                     -crypto-contain tools for encryption and decryption,hashing------ 
+                                     -process - to process environmental variables during run state
+
+node js package system- collection of node modules
+                       -package.json- handle packages in node js ,it contain npm configuration
+                       npm install packageName
+                       node modules-store copies of installed packages
+                       npm install- npm i 
+                       package-lock.json-: to hold versions of installed packages
+                       
+
+                       EXPRESS----------------------------------------------
+
+                       framework of node --- used to resolve client side request
+                       server creation steps
+                       1: create a folder for server
+                       2: create package.json : npm init -y
+                       3:set up start command in script of package .json
+                       "start":"node index.js"
+                       4:create main file index.js
+                       5:install express---npm i express
+                       6:create folder .gitignore and push node_modules
+                       7:index.js le express import cheyya:require('express")
+                       8:create server
+                       9:then install cors package: npm i cors
+
+
+
+                      --------------------- -node follow MVC(model view controller) architecture
+                      model -backend server structure
+                      controller-logic kodthittilla main file 
+                      view-response that send to user
+                      user send request to controller then controller send req to model then model reponse to controller, controll dend data to view ,view response to user 
+
+----------------------------MONGODB-------------------------------------
+
+                - its a database used to store large amount of data permennatly.
+
+               | SQL                                  |                             MDB               |
+                ----------------------------------------------------------------------------------------     
+                 1. relational db                             1. Non relatinal database(document oriented Nosql DB)
+                 2.  stored data in table as rows             2. collection of json documents
+                     and columns  
+                 3. fixed schema                              3.  dynamic schema 
+                 4. used to optimise and complex              4.  optimised for scalability and performance
+                    join and transaction 
+                5.  Support rich set of data types            5.limited set of data types
+                6.  ACID(atomicity consistancy                6. CAP(consistancy ,availability,partition tolereance) property
+                         isolation durability)
+                         property      
+                7. used in tradition buisiness apps           7. used in bigdata and real-time web application
+                ---------------------------------------------------------------------------------------------------------------
+
+                commands:
+                show databases     : display all databases
+                use <databaseName> : redirect to particular db
+                show collections   : to display all collections in db
+         db.<collectionName>.find(): to get all documents from a collection array of object [{},{}...]
+db.<collectionName>.find(condition): array with documents which satisfy condition
+db.<collectionName>.findOne(condition):single object that satisfy the condition
+db.<collectionName>.find().limit(count) :   get limited documents
+db.<collectionName>.find().sort({key:1/-1}) :to sort documents while reading
+db.<collectionName>.insertMany([{},{}]):insert many documents at same time
+db.<collectionName>.insertOne({}):insert one document at same time
+  $gt/$gte/$lt/$lte 
+  $or/$and(,)
+  $set- replacing
+  $inc(1)/$inc(-1)
+  $push -add
+  $pull-remove
+  $exists-
+
+  updateOne():db.student.updateOne({name:"aslu"},{$set:{age:25}}) - change one student age whose name is aslu
+  updateMany():db.student.updateMany({name:"riju"},{$set:{age:20}})-change all student whose name is riju
+
+  deleteOne():db.<collectionName>.deleteOne(condition)
+  deleteMany():db<collectionName>.deleteMany(condition)
+
+  join-aggregation
+
+  aggregate using lookup
+
+  {}
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             env(environmental variables)
+             -----------------------------
+             variables that contain application configuration needed during run-time .it convert static working of app into dynamic(local server to running server)
+             process module____-- is used to handling environmental variables in node
